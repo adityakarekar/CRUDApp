@@ -1,0 +1,46 @@
+<%- include('partials/header'); -%>
+    <div class="container home">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="data:productData/<%=productData.image.contentType%>;base64,
+            <%=productData.image.data.toString('base64')%>" width=60% />
+            </div>
+
+            <div class="col-lg-6">
+                <h1>
+                    Product Name:
+                </h1>
+                <p>
+                    <%=productData.name %>
+                </p>
+
+                <br />
+                <br />
+
+                <h1>Product Brand:</h1>
+                <p>
+                    <%=productData.brand %>
+                </p>
+                <br />
+                <br />
+
+                <h1>Product Description:</h1>
+                <p>
+                    <%=productData.description %>
+                </p>
+                <br />
+                <br />
+
+                <h1>Product Category:</h1>
+                <p>
+                    <%=productData.category %>
+                </p>
+                <br/>
+                <br/>
+                <br/>
+                <h3><a href="/">Go to Home Page</a></h3>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>

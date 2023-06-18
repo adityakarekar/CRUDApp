@@ -1,0 +1,42 @@
+<%- include('partials/header'); -%>
+    <div class="text-center">
+        <div>
+
+            <form class="form-signin" action="/create" method="POST" enctype="multipart/form-data">
+                <h1 class="h3 mb-3 font-weight-normal">Add A Product.</h1>
+                <label for="name" class="sr-only">Product Name</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Product Name" required autofocus
+                    name="name">
+                <label for="image" class="sr-only">Product Image</label>
+                <input type="file" class="form-control" id="image" name="testImg" required>
+
+                <label for="brand" class="sr-only">Product Brand</label>
+                <input type="text" class="form-control" id="brand" name="brand" required placeholder="Product Brand">
+
+
+                <label for="description" class="sr-only">Product Description</label>
+                <textarea placeholder="Description" id="description" name="description" value="" rows="2"
+                    class="form-control" required></textarea>
+
+                <label for="category" class="form-control">Choose a category:</label>
+
+                <select name="category" id="category" class="form-control">
+                    <option value="electronics">electronics</option>
+                    <option value="furniture">furniture</option>
+                    <option value="clothing">clothing</option>
+                    <option value="cosmetics">cosmetics</option>
+                </select>
+
+                <button onclick="confirm()" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+            </form>
+        </div>
+
+        <hr />
+    </div>
+    </body>
+    <script type="text/javascript">
+        function confirm() {
+          alert("data deleted successfully");
+        }
+    </script>

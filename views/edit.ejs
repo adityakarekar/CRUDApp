@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+    <div class="text-center">
+        <div>
+
+            <form class="form-signin" action="/edit/<%= productData.id%>" method="POST" enctype="multipart/form-data">
+                <h1 class="h3 mb-3 font-weight-normal">Updating A Product.</h1>
+                <label for="name" class="sr-only">Product Name</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Product Name" value="<%=productData.name%>" required autofocus
+                    name="name">
+                <label for="image" class="sr-only">Product Image</label>
+                <input type="file" class="form-control" id="image" name="testImg" required>
+                <br/>
+                <img src="data:productData/<%=productData.image.contentType%>;base64,
+                <%=productData.image.data.toString('base64')%>" width="100px" height="100px" />
+
+                <label for="brand" class="sr-only">Product Brand</label>
+                <input type="text" class="form-control" id="brand" name="brand" required placeholder="Product Brand" value="<%=productData.brand%>" >
+
+
+                <label for="description" class="sr-only">Product Description</label>
+                <textarea placeholder="Description" id="description"  name="description"  rows="2" class="form-control" required  ><%=productData.description%></textarea>
+
+                <label for="category" class="form-control">Choose a category:</label>
+    
+                    <select  name="category" id="category" class="form-control">
+                        <option value="<%=productData.category%>">electronics</option>
+                        <option value="<%=productData.category%>">furniture</option>
+                        <option value="<%=productData.category%>">clothing</option>
+                        <option value="<%=productData.category%>">cosmetics</option>
+                    </select>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="confirm()">Submit</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+            </form>
+        </div>
+
+        <hr />
+    </div>
+
+    <script type="text/javascript">
+            function confirm() {
+                alert("data edited successfullyl");   
+            }
+    </script>
